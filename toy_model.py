@@ -160,6 +160,7 @@ def simulate_water_balance(
     Pt = 0  # Throughfall
     AET = 0  # Actual evapotranspiration
     S = 0  # Storage
+    R_ro = 0  # Runoff
 
     Inet = 0  # Net irrigation
     Igross = 0  # Gross irrigation
@@ -241,12 +242,12 @@ def simulate_water_balance(
             Id = 0.0
 
         # Update soil moisture
-        if Wcap < Ws[tt - 1] + (Pt - Id) - AET:
-            S = Ws[tt - 1] + (Pt - Id) - AET - Wcap
+        if Wcap < Ws[tt - 1] + (Pt + Ms - Id) - AET:
+            S = Ws[tt - 1] + (Pt + Ms - Id) - AET - Wcap
         else:
             S = 0
 
-        Ws[tt] = Ws[tt - 1] + (Pt - Id) - AET - S
+        Ws[tt] = Ws[tt - 1] + (Pt + Ms - Id) - AET - S
         Ws_frac[tt] = Ws[tt] / Wcap
 
         if Ws[tt] < 0:
