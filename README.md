@@ -1,5 +1,5 @@
 # WBM soil moisture submodule
-Python script to reproduce WBM soil moisture submodule. Equations are taken from [Grogan (2016)](https://scholars.unh.edu/dissertation/2/), [Grogan et al. (2022)](https://gmd.copernicus.org/articles/15/7287/2022/), and WBM v 23.1.0 source code.
+Python script to reproduce WBM soil moisture submodule. Equations are taken from [Grogan (2016)](https://scholars.unh.edu/dissertation/2/), [Grogan et al. (2022)](https://gmd.copernicus.org/articles/15/7287/2022/), and WBM v23.1.0 source code.
 
 There are some differences from full WBM:
 - Here we simulate a single grid cell so there is no lateral transport of moisture
